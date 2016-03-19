@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive xmlns="http://rs.tdwg.org/dwc/text/" metadata="unit.csv">
+    <core encoding="UTF-8" 
+        linesTerminatedBy="\r\n" 
+        fieldsTerminatedBy="," 
+        fieldsEnclosedBy="&quot;" 
+        ignoreHeaderLines="1" 
+        rowType="http://rs.tdwg.org/dwc/terms/Occurrence">
+        
+        <files>
+            <location>unit.csv</location>
+        </files>
+        
+        <id index="0"/>
+        
+        <!-- Collection Object -->
+        <field default="Australia's Virtual Herbarium" term="http://rs.tdwg.org/dwc/terms/datasetName"/> <!-- datasetName -->
+        <field index="1" term="http://rs.tdwg.org/dwc/terms/institutionCode"/> <!-- institutionCode -->
+        <field index="2" term="http://rs.tdwg.org/dwc/terms/collectionCode"/> <!-- collectionCode -->
+        <field index="3" term="http://rs.tdwg.org/dwc/terms/catalogNumber"/> <!-- catalogNumber -->
+        <field index="4" term="http://rs.tdwg.org/dwc/terms/occurrenceID"/> <!-- occurrenceID -->
+        <field index="5" default="PreservedSpecimen" term="http://rs.tdwg.org/dwc/terms/basisOfRecord"/> <!-- basisOfRecord -->
+        <field index="6" term="http://rs.tdwg.org/dwc/terms/preparations"/> <!-- preparations -->
+        <field index="7" term="http://purl.org/dc/terms/modified"/> <!-- modified -->
+        
+        <!-- Collecting Event -->
+        <field index="8" term="http://rs.tdwg.org/dwc/terms/recordedBy"/> <!-- recordedBy -->
+        <field index="9" term="http://www.chah.org.au/hispid/terms/secondaryCollectors"/> <!-- AdditionalCollectors -->
+        <field index="10" term="http://rs.tdwg.org/dwc/terms/recordNumber"/> <!-- recordNumber --><!-- Changed from 'fieldNumber' 2014-02-17 -->
+        <field index="11" term="http://rs.tdwg.org/dwc/terms/eventDate"/> <!-- eventDate -->
+        <field index="12" term="http://rs.tdwg.org/dwc/terms/verbatimEventDate"/> <!-- verbatimEventDate -->
+        <field index="13" term="http://rs.tdwg.org/dwc/terms/country"/> <!-- country -->
+        <field index="14" term="http://rs.tdwg.org/dwc/terms/countryCode"/> <!-- countryCode -->
+        <field index="15" term="http://rs.tdwg.org/dwc/terms/stateProvince"/> <!-- stateProvince -->
+        <field index="16" term="http://rs.tdwg.org/dwc/terms/locality"/> <!-- locality -->
+        <field index="17" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0977"/> <!--  GeneralisedLocality  -->
+        <field index="18" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0980"/> <!--  NearNamedPlaceRelationShip  -->
+        <field index="19" term="http://rs.tdwg.org/dwc/terms/decimalLatitude"/> <!-- decimalLatitude -->
+        <field index="20" term="http://rs.tdwg.org/dwc/terms/decimalLongitude"/> <!-- decimalLongitude -->
+        <field index="21" term="http://rs.tdwg.org/dwc/terms/verbatimCoordinates"/> <!-- verbatimCoordinates -->
+        <field index="22" term="http://rs.tdwg.org/dwc/terms/geodeticDatum"/> <!-- geodeticDatum -->
+        <field index="23" term="http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters"/> <!-- coordinateUncertainty -->
+        <field index="24" term="http://rs.tdwg.org/dwc/terms/georeferencedBy"/> <!-- georeferencedBy -->
+        <field index="25" term="http://rs.tdwg.org/dwc/terms/georeferenceProtocol"/> <!-- georeferenceProtocol -->
+        <field index="26" term="http://rs.tdwg.org/dwc/terms/minimumElevationInMeters"/> <!-- minimumElevationInMeters -->
+        <field index="27" term="http://rs.tdwg.org/dwc/terms/maximumElevationInMeters"/> <!-- maximumElevationInMeters -->
+        <field index="28" term="http://rs.tdwg.org/dwc/terms/verbatimElevation"/> <!-- verbatimElevation -->
+        <field index="29" term="http://rs.tdwg.org/dwc/terms/minimumDepthInMeters"/> <!-- minimumDepthInMeters -->
+        <field index="30" term="http://rs.tdwg.org/dwc/terms/maximumDepthInMeters"/> <!-- maximumDepthInMeters -->
+        <field index="31" term="http://rs.tdwg.org/dwc/terms/verbatimDepth"/> <!-- verbatimDepth -->
+        <field index="32" term="http://rs.tdwg.org/dwc/terms/habitat"/> <!-- habitat -->
+        <field index="33" term="http://rs.tdwg.org/dwc/terms/occurrenceRemarks"/> <!-- occurrenceRemarks -->
+        <field default="present" term="http://rs.tdwg.org/dwc/terms/occurrenceStatus"/> <!-- occurrenceStatus -->
+        
+        <!-- Current Determination -->
+        <field default="ICBN" term="http://rs.tdwg.org/dwc/terms/nomenclaturalCode"/> <!-- nomenclaturalCode -->
+        <field index="34" term="http://rs.tdwg.org/dwc/terms/scientificName"/> <!-- ScientificName -->
+        <field index="35" term="http://rs.tdwg.org/dwc/terms/kingdom"/> <!-- kingdom -->
+        <field index="36" term="http://rs.tdwg.org/dwc/terms/phylum"/> <!-- family -->
+        <field index="37" term="http://rs.tdwg.org/dwc/terms/class"/> <!-- class -->
+        <field index="38" term="http://rs.tdwg.org/dwc/terms/order"/> <!-- order -->
+        <field index="39" term="http://rs.tdwg.org/dwc/terms/family"/> <!-- family -->
+        <field index="40" term="http://rs.tdwg.org/dwc/terms/genus"/> <!-- genus -->
+        <field index="41" term="http://rs.tdwg.org/dwc/terms/specificEpithet"/> <!-- specificEpithet -->
+        <field index="42" term="http://rs.tdwg.org/dwc/terms/taxonRank"/> <!-- taxonRank -->
+        <field index="43" term="http://rs.tdwg.org/dwc/terms/infraspecificEpithet"/> <!-- infraspecificEpithet -->
+        <field index="44" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0315"/> <!-- CultivarName -->
+        <field index="45" term="http://rs.tdwg.org/dwc/terms/scientificNameAuthorship"/> <!-- scientificNameAuthorship -->
+        <field index="46" term="http://rs.tdwg.org/dwc/terms/nomenclaturalStatus"/> <!-- nomenclaturalStatus -->
+        <field index="47" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0332"/> <!-- identificationQualifier -->
+        <field index="48" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0333"/> <!-- IdentificationQualifierInsertionPoint -->
+        <field index="49" term="http://rs.tdwg.org/dwc/terms/identificationQualifier"/> <!-- DwC identificationQualifier -->
+        <field index="50" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0334"/> <!-- ScientificNameAddendum -->
+        <field index="51" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0376"/> <!-- DeterminerRole -->
+        <field index="52" term="http://rs.tdwg.org/dwc/terms/identifiedBy"/> <!-- identifiedBy -->
+        <field index="53" term="http://rs.tdwg.org/dwc/terms/dateIdentified"/> <!-- dateIdentified -->
+        <field index="54" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0383"/> <!-- VerbatimDeterminationDate -->
+        <field index="55" term="http://rs.tdwg.org/dwc/terms/identificationRemarks"/> <!-- identificationRemarks -->
+        <field index="56" term="http://rs.tdwg.org/dwc/terms/previousIdentifications"/> <!-- previousIdentifications -->
+        
+        <!-- Type Status Designation-->
+        <field index="57" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0645"/> <!-- typeStatus -->
+        <field index="58" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0604"/> <!-- TypifiedName -->
+        <field index="59" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0647"/> <!-- DoubtfulFlag -->
+        <field index="60" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0649"/> <!-- Verifier -->
+        <field index="61" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0657"/> <!-- VerificationDate -->
+        <field index="62" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0658"/> <!-- VerificationNotes -->
+        <field index="63" term="http://rs.tdwg.org/dwc/terms/typeStatus"/> <!-- DwC typeStatus-->
+        
+        <!-- Exchange -->
+        <field index="64" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0580"/> <!-- ExHerb -->
+        <field index="65" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0579"/> <!-- ExHerbCatalogNumber -->
+        <field index="66" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0711"/> <!-- DuplicatesDistributedTo -->
+
+        <!-- Current loan -->
+        <field index="67" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0712"/> <!-- LoanNumber -->
+        <field index="68" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0714"/> <!-- LoanDestination -->
+        
+        <!-- Denormalised Named Areas -->
+        <field index="69" term="http://www.chah.org.au/hispid/terms/australianHerbariumRegion"/> <!-- Australian Herbarium Region -->
+        <field index="70" term="http://www.chah.org.au/hispid/terms/ibraRegion"/> <!-- IBRA Region -->
+        <field index="71" term="http://www.chah.org.au/hispid/terms/ibraSubregion"/> <!-- IBRA Subregion -->
+        
+        <!-- Denormalised Measurements and Facts -->
+        <field index="72" term="http://rs.tdwg.org/dwc/terms/reproductiveCondition"/> <!-- Phenology -->
+        <field index="73" term="http://www.chah.org.au/hispid/terms/cultivatedOccurrence"/> <!-- CultivatedOccurrence -->
+        <field index="74" term="http://www.chah.org.au/hispid/terms/naturalOccurrence"/> <!-- NaturalOccurrence -->
+        <field index="75" term="http://rs.tdwg.org/dwc/terms/establishmentMeans"/> <!-- EstablishmentMeans -->
+        
+        <!-- Added 2013-07-04 -->
+        <field index="76" term="http://rs.tdwg.org/dwc/terms/verbatimLatitude"/> <!-- verbatimLatitude -->
+        <field index="77" term="http://rs.tdwg.org/dwc/terms/verbatimLongitude"/> <!-- verbatimLongitude -->
+        <field index="78" term="http://rs.tdwg.org/dwc/terms/coordinatePrecision"/> <!-- coordinatePrecision -->
+        <field index="79" term="http://rs.tdwg.org/dwc/terms/verbatimCoordinateSystem"/> <!-- verbatimCoordinateSystem -->
+        <field index="80" term="http://rs.tdwg.org/dwc/terms/verbatimSRS"/> <!-- verbatimSRS -->
+        
+        <!-- Added 2013-08-13 -->
+        <field index="81" term="http://rs.tdwg.org/dwc/terms/locationRemarks"/> <!-- locationRemarks -->
+        <field index="82" term="http://rs.tdwg.org/dwc/terms/associatedTaxa"/> <!-- associatedTaxa -->
+        
+        <!-- Added 2013-08-13 -->
+        <field index="83" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0850"/> <!-- ABCDAssemblageID -->
+        
+        <!-- Added 2013-09-05 -->
+        <field index="84" term="http://www.chah.org.au/hispid/terms/substrate"/> <!-- HISPID Substrate -->
+        <field index="85" term="http://www.chah.org.au/hispid/terms/soil"/> <!-- HISPID Soil -->
+        <field index="86" term="http://www.chah.org.au/hispid/terms/vegetation"/> <!-- HISPID Vegetation -->
+        <field index="87" term="http://www.chah.org.au/hispid/terms/aspect"/> <!-- HISPID Aspect -->
+        <field index="88" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept1433"/> <!-- HISPID Miscellaneous Notes -->
+        <field index="89" term="http://www.chah.org.au/hispid/terms/frequency"/> <!-- HISPID Frequency -->
+        <field index="90" term="http://www.chah.org.au/hispid/terms/habit"/> <!-- HISPID Habit -->
+        <field index="91" term="http://www.chah.org.au/hispid/terms/voucher"/> <!-- HISPID Voucher -->
+        <field index="92" term="http://rs.tdwg.org/dwc/terms/county"/> <!-- county -->
+        <field index="93" term="http://rs.tdwg.org/dwc/terms/continent"/> <!-- continent -->
+        <field index="94" term="http://www.chah.org.au/hispid/terms/subclass"/> <!-- subclass -->
+        
+        <!-- Added 2013-10-29 -->
+        <field index="95" term="http://rs.tdwg.org/dwc/terms/georeferencedDate"/> <!-- georeferencedDate -->
+        <field index="96" term="http://rs.tdwg.org/dwc/terms/georeferenceSources"/> <!-- georeferenceSources -->
+        <field index="97" term="http://rs.tdwg.org/dwc/terms/georeferenceVerificationStatus"/> <!-- georeferenceVerificationStatus -->
+        <field index="98" term="http://rs.tdwg.org/dwc/terms/georeferenceRemarks"/> <!-- georeferenceRemarks -->
+        
+        <!-- Added 2014-01-05 -->
+        <field index="99" term="http://rs.tdwg.org/dwc/terms/identificationID"/> <!-- identificationID -->
+        
+        <!-- Added 2015-01-07 -->
+        <field index="100" term="http://rs.tdwg.org/dwc/terms/lifeStage"/> <!-- lifeStage -->
+        
+        <!-- Added 2015-05-14 -->
+        <field index="101" term="http://rs.tdwg.org/dwc/terms/associatedSequences"/> <!-- associatedSequences -->
+        
+        <!-- Added 2015-07-10 -->
+        <field index="102" term="http://rs.tdwg.org/dwc/terms/waterBody"/> <!-- waterBody -->
+        <field index="103" term="http://rs.tdwg.org/dwc/terms/islandGroup"/> <!-- islandGroup -->
+        <field index="104" term="http://rs.tdwg.org/dwc/terms/island"/> <!-- island -->
+        
+        <!-- Columns that need to be deleted -->
+        <field index="105" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0715"/>
+        <field index="106" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0717"/>
+        <field index="107" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0718"/>
+        <field index="108" term="http://rs.tdwg.org/dwc/terms/fieldNumber"/>
+        <field index="109" term="http://www.chah.org.au/hispid/terms/phenology"/>
+        
+    </core>
+    
+    <!-- Determination History -->
+    <!-- Previous determinations only; the current determination is in the Core file -->
+    <extension encoding="UTF-8" 
+        linesTerminatedBy="\r\n" 
+        fieldsTerminatedBy="," 
+        fieldsEnclosedBy="&quot;" 
+        ignoreHeaderLines="1" 
+        rowType="http://rs.tdwg.org/dwc/terms/Identification">
+        <files>
+            <location>identificationhistory.csv</location>
+        </files>
+        <coreid index="0"/>
+        <field default="ICBN" term="http://rs.tdwg.org/dwc/terms/nomenclaturalCode"/> <!-- nomenclaturalCode -->
+        <field index="1" term="http://rs.tdwg.org/dwc/terms/scientificName"/> <!-- ScientificName -->
+        <field index="2" term="http://rs.tdwg.org/dwc/terms/kingdom"/> <!-- kingdom -->
+        <field index="3" term="http://rs.tdwg.org/dwc/terms/phylum"/> <!-- family -->
+        <field index="4" term="http://rs.tdwg.org/dwc/terms/class"/> <!-- class -->
+        <field index="5" term="http://rs.tdwg.org/dwc/terms/order"/> <!-- order -->
+        <field index="6" term="http://rs.tdwg.org/dwc/terms/family"/> <!-- family -->
+        <field index="7" term="http://rs.tdwg.org/dwc/terms/genus"/> <!-- genus -->
+        <field index="8" term="http://rs.tdwg.org/dwc/terms/specificEpithet"/> <!-- specificEpithet -->
+        <field index="9" term="http://rs.tdwg.org/dwc/terms/taxonRank"/> <!-- taxonRank -->
+        <field index="10" term="http://rs.tdwg.org/dwc/terms/infraspecificEpithet"/> <!-- infraspecificEpithet -->
+        <field index="11" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0315"/> <!-- CultivarName -->
+        <field index="12" term="http://rs.tdwg.org/dwc/terms/scientificNameAuthorship"/> <!-- scientificNameAuthorship -->
+        <field index="13" term="http://rs.tdwg.org/dwc/terms/nomenclaturalStatus"/> <!-- nomenclaturalStatus -->
+        <field index="14" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0332"/> <!-- identificationQualifier -->
+        <field index="15" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0333"/> <!-- IdentificationQualifierInsertionPoint -->
+        <field index="16" term="http://rs.tdwg.org/dwc/terms/identificationQualifier"/> <!-- DwC identificationQualifier -->
+        <field index="17" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0334"/> <!-- ScientificNameAddendum -->
+        <field index="18" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0376"/> <!-- DeterminerRole -->
+        <field index="19" term="http://rs.tdwg.org/dwc/terms/identifiedBy"/> <!-- identifiedBy -->
+        <field index="20" term="http://rs.tdwg.org/dwc/terms/dateIdentified"/> <!-- dateIdentified -->
+        <field index="21" term="http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0383"/> <!-- VerbatimDeterminationDate -->
+        <field index="22" term="http://rs.tdwg.org/dwc/terms/identificationRemarks"/> <!-- identificationRemarks -->
+        
+        <!-- Added 2014-01-05 -->
+        <field index="23" term="http://rs.tdwg.org/dwc/terms/identificationID"/> <!-- identificationID -->
+        
+    </extension>
+</archive>

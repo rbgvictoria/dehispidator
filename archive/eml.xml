@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:d="eml://ecoinformatics.org/dataset-2.1.0" xmlns:dc="http://purl.org/dc/terms/" xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/dev/eml.xsd" system="ALA-Registry" scope="system" xml:lang="en" packageId="6b6daf76-71e9-3264-8a2f-a1f27908107c/v1">
+  <dataset>
+    <title xmlns:lang="en">MEL AVH data</title>
+    <creator>
+      <organizationName>National Herbarium of Victoria</organizationName>
+      <address>
+        <deliveryPoint>Royal Botanic Gardens Melbourne, Birdwood Avenue</deliveryPoint>
+        <city>South Yarra</city>
+        <administrativeArea>Victoria</administrativeArea>
+        <postalCode>3141</postalCode>
+        <country>Australia</country>
+      </address>
+      <phone>(03) 92522300</phone>
+      <electronicMailAddress>avh@rbg.vic.gov.au</electronicMailAddress>
+      <onlineUrl>http://www.rbg.vic.gov.au</onlineUrl>
+    </creator>
+    <metadataProvider>
+      <organizationName>National Herbarium of Victoria</organizationName>
+      <address>
+        <deliveryPoint>Royal Botanic Gardens Melbourne, Birdwood Avenue</deliveryPoint>
+        <city>South Yarra</city>
+        <administrativeArea>Victoria</administrativeArea>
+        <postalCode>3141</postalCode>
+        <country>Australia</country>
+      </address>
+      <phone>(03) 92522300</phone>
+      <electronicMailAddress>avh@rbg.vic.gov.au</electronicMailAddress>
+      <onlineUrl>http://www.rbg.vic.gov.au</onlineUrl>
+    </metadataProvider>
+    <associatedParty>
+      <organizationName>Atlas of Living Australia (ALA)</organizationName>
+      <address>
+        <deliveryPoint>CSIRO Black Mountain Laboratories, Clunies Ross Street, ACTON</deliveryPoint>
+        <city>Canberra</city>
+        <administrativeArea>ACT</administrativeArea>
+        <postalCode>2601</postalCode>
+        <country>Australia</country>
+      </address>
+      <electronicMailAddress>info@ala.org.au</electronicMailAddress>
+      <role>distributor</role>
+    </associatedParty>
+    <associatedParty>
+		<individualName>
+			<givenName>Niels</givenName>
+			<surName>Klazenga</surName>
+		</individualName>
+		<electronicMailAddress>avh@rbg.vic.gov.au</electronicMailAddress>
+		<role>Technical contact</role>
+    </associatedParty>
+    <associatedParty>
+		<individualName>
+			<givenName>Niels</givenName>
+			<surName>Klazenga</surName>
+		</individualName>
+		<electronicMailAddress>avh@rbg.vic.gov.au</electronicMailAddress>
+		<role>Content contact</role>
+    </associatedParty>
+    <associatedParty>
+		<individualName>
+			<givenName>Niels</givenName>
+			<surName>Klazenga</surName>
+		</individualName>
+		<electronicMailAddress>avh@rbg.vic.gov.au</electronicMailAddress>
+		<role>Content contact</role>
+    </associatedParty>
+    <pubDate>2012-02-20</pubDate>
+    <language>English</language>
+    <abstract>
+      <para>Records from MELISR, the collections database of the National Herbarium of Victoria (MEL).</para>
+    </abstract>
+    <intellectualRights>
+      <para>You are licensed to use, reproduce, distribute, publish or otherwise make available the Data, or to use or adapt the Data to create derivative works. 
+In any reproduction, distribution or publication of the Data, you must attribute the source of the Data as Australia's Virtual Herbarium (AVH). 
+In any use or adaptation of the Data to create derivative works, you must acknowledge the use of the Data in the derivative work and attribute the source of the Data as Australia's Virtual Herbarium (AVH). 
+You acknowledge that the Data may contain errors and omissions and that you employ the Data at your own risk.
+Neither the Council of Heads of Australasian Herbaria (CHAH) nor any other Data Custodian will accept liability for any loss, damage, cost or expenses that you may incur as a result of the use of or reliance upon the Data. 
+You should use the current Data from the ALA portal and not rely on material you have previously printed or downloaded.</para>
+    </intellectualRights>
+    <distribution>
+      <online>
+        <url function="information">http://collections.ala.org.au/public/show/co55</url>
+      </online>
+    </distribution>
+    <contact>
+      <individualName>
+        <givenName>Alison</givenName>
+        <surName>Vaughan</surName>
+      </individualName>
+      <positionName>Herbarium Information Officer</positionName>
+      <electronicMailAddress>avh@rbg.vic.gov.au</electronicMailAddress>
+    </contact>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <gbif>
+        <dateStamp>2012-02-20T01:48:52</dateStamp>
+        <hierarchyLevel>dataset</hierarchyLevel>
+      </gbif>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

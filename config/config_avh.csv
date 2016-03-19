@@ -1,0 +1,190 @@
+Unit/SourceInstitutionID,SourceInstitutionID
+Unit/UnitID,UnitID
+Unit/RecordBasis,RecordBasis
+Unit/KindOfUnit,KindOfUnit
+Unit/DateLastEdited,DateLastEdited
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""1""]/AgentText",Collector [1]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""1""]/@primarycollector",PrimaryCollector [1]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""2""]/AgentText",Collector [2]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""2""]/@primarycollector",PrimaryCollector [2]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""3""]/AgentText",Collector [3]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""3""]/@primarycollector",PrimaryCollector [3]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""4""]/AgentText",Collector [4]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""4""]/@primarycollector",PrimaryCollector [4]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""5""]/AgentText",Collector [5]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""5""]/@primarycollector",PrimaryCollector [5]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""6""]/AgentText",Collector [6]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""6""]/@primarycollector",PrimaryCollector [6]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""7""]/AgentText",Collector [7]
+"Unit/Gathering/Agents/GatheringAgent[@sequence=""7""]/@primarycollector",PrimaryCollector [7]
+Unit/CollectorsFieldNumber,CollectorsFieldNumber
+Unit/Gathering/DateTime/ISODateTimeBegin,CollectingDateStart
+Unit/Gathering/DateTime/ISODateTimeEnd,CollectingDateEnd
+Unit/Gathering/DateTime/DateText,CollectingDateString
+Unit/Gathering/Country/Name,Country
+Unit/Gathering/Country/ISO3166Code,CountryISOCode
+"Unit/Gathering/NamedAreas/NamedArea[AreaClass=""State""]/AreaName",State
+"Unit/Gathering/NamedAreas/NamedArea[AreaClass=""IBRA region""]/AreaName",IBRARegion
+"Unit/Gathering/NamedAreas/NamedArea[AreaClass=""IBRA subregion""]/AreaName",IBRASubregion
+"Unit/Gathering/NamedAreas/NamedArea[AreaClass=""Australian Herbarium Region""]/AreaName",Australian Herbarium Region
+Unit/Gathering/LocalityText,Locality
+Unit/Gathering/NearNamedPlaces/NamedPlaceRelation/NearNamedPlace,GeneralisedLocality
+Unit/Gathering/NearNamedPlaces/NamedPlaceRelation/NearNamedPlaceRelationTo,NearNamedPlaceRelationship
+Unit/Gathering/SiteCoordinateSets/SiteCoordinates/CoordinatesLatLong/LatitudeDecimal,Latitude
+Unit/Gathering/SiteCoordinateSets/SiteCoordinates/CoordinatesLatLong/LongitudeDecimal,Longitude
+Unit/Gathering/SiteCoordinateSets/SiteCoordinates/CoordinatesLatLong/SpatialDatum,SpatialDatum
+Unit/Gathering/SiteCoordinateSets/SiteCoordinates/CoordinateMethod,GeocodeSource
+Unit/Gathering/SiteCoordinateSets/SiteCoordinates/CoordinatesLatLong/CoordinateErrorDistanceInMeters,GeocodeUncertainty
+Unit/Gathering/Altitude/MeasurementOrFactAtomised/LowerValue,MinAltitude
+Unit/Gathering/Altitude/MeasurementOrFactAtomised/UpperValue,MaxAltitude
+Unit/Gathering/Altitude/MeasurementOrFactAtomised/UnitOfMeasurement,AltitudeUnit
+Unit/Gathering/Depth/MeasurementOrFactAtomised/LowerValue,MinDepth
+Unit/Gathering/Depth/MeasurementOrFactAtomised/UpperValue,MaxDepth
+Unit/Gathering/Depth/MeasurementOrFactAtomised/UnitOfMeasurement,DepthUnit
+Unit/Gathering/Biotope/Text,Habitat
+Unit/Gathering/Notes,CollectingNotes
+Unit/Gathering/Synecology/Comment,Synecology
+Unit/Identifications/Identification[1]/PreferredFlag,CurrentDetermination [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/FullScientificNameString,ScientificName [1]
+"Unit/Identifications/Identification[1]/Result/TaxonIdentified/HigherTaxa/HigherTaxon[HigherTaxonRank=""familia""]/HigherTaxonName",Family [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/GenusOrMonomial,GenusOrMonomial [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/FirstEpithet,FirstEpithet [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/Rank,InfraspecificRank [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/InfraspecificEpithet,InfraspecificEpithet [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeam,Author [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeamParenthesis,BasionymAuthor [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag,HybridFlag [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag/@insertionpoint,HybridFlagInsertionPoint [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/IdentificationQualifier,DeterminationQualifier [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/IdentificationQualifier/@insertionpoint,DeterminationQualifierInsertionPoint [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/NameAddendum,ScientificNameAddendum [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/CultivarName,CultivarName [1]
+Unit/Identifications/Identification[1]/Result/TaxonIdentified/NameComments,NomenclaturalNote [1]
+Unit/Identifications/Identification[1]/Identifiers/IdentifierRole,DeterminerRole [1]
+Unit/Identifications/Identification[1]/Identifiers/IdentifiersText,Determiner [1]
+Unit/Identifications/Identification[1]/Date/DateText,DeterminationDateString [1]
+Unit/Identifications/Identification[1]/Date/ISODateTimeBegin,DeterminationDate [1]
+Unit/Identifications/Identification[1]/Notes,DeterminationNotes [1]
+Unit/Identifications/Identification[2]/PreferredFlag,CurrentDetermination [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/FullScientificNameString,ScientificName [2]
+"Unit/Identifications/Identification[2]/Result/TaxonIdentified/HigherTaxa/HigherTaxon[HigherTaxonRank=""familia""]/HigherTaxonName",Family [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/GenusOrMonomial,GenusOrMonomial [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/FirstEpithet,FirstEpithet [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/Rank,InfraspecificRank [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/InfraspecificEpithet,InfraspecificEpithet [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeam,Author [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeamParenthesis,BasionymAuthor [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag,HybridFlag [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag/@insertionpoint,HybridFlagInsertionPoint [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/IdentificationQualifier,DeterminationQualifier [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/IdentificationQualifier/@insertionpoint,DeterminationQualifierInsertionPoint [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/NameAddendum,ScientificNameAddendum [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/CultivarName,CultivarName [2]
+Unit/Identifications/Identification[2]/Result/TaxonIdentified/NameComments,NomenclaturalNote [2]
+Unit/Identifications/Identification[2]/Identifiers/IdentifierRole,DeterminerRole [2]
+Unit/Identifications/Identification[2]/Identifiers/IdentifiersText,Determiner [2]
+Unit/Identifications/Identification[2]/Date/DateText,DeterminationDateString [2]
+Unit/Identifications/Identification[2]/Date/ISODateTimeBegin,DeterminationDate [2]
+Unit/Identifications/Identification[2]/Notes,DeterminationNotes [2]
+Unit/Identifications/Identification[3]/PreferredFlag,CurrentDetermination [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/FullScientificNameString,ScientificName [3]
+"Unit/Identifications/Identification[3]/Result/TaxonIdentified/HigherTaxa/HigherTaxon[HigherTaxonRank=""familia""]/HigherTaxonName",Family [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/GenusOrMonomial,GenusOrMonomial [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/FirstEpithet,FirstEpithet [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/Rank,InfraspecificRank [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/InfraspecificEpithet,InfraspecificEpithet [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeam,Author [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeamParenthesis,BasionymAuthor [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag,HybridFlag [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag/@insertionpoint,HybridFlagInsertionPoint [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/IdentificationQualifier,DeterminationQualifier [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/IdentificationQualifier/@insertionpoint,DeterminationQualifierInsertionPoint [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/NameAddendum,ScientificNameAddendum [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/CultivarName,CultivarName [3]
+Unit/Identifications/Identification[3]/Result/TaxonIdentified/NameComments,NomenclaturalNote [3]
+Unit/Identifications/Identification[3]/Identifiers/IdentifierRole,DeterminerRole [3]
+Unit/Identifications/Identification[3]/Identifiers/IdentifiersText,Determiner [3]
+Unit/Identifications/Identification[3]/Date/DateText,DeterminationDateString [3]
+Unit/Identifications/Identification[3]/Date/ISODateTimeBegin,DeterminationDate [3]
+Unit/Identifications/Identification[3]/Notes,DeterminationNotes [3]
+Unit/Identifications/Identification[4]/PreferredFlag,CurrentDetermination [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/FullScientificNameString,ScientificName [4]
+"Unit/Identifications/Identification[4]/Result/TaxonIdentified/HigherTaxa/HigherTaxon[HigherTaxonRank=""familia""]/HigherTaxonName",Family [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/GenusOrMonomial,GenusOrMonomial [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/FirstEpithet,FirstEpithet [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/Rank,InfraspecificRank [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/InfraspecificEpithet,InfraspecificEpithet [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeam,Author [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeamParenthesis,BasionymAuthor [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag,HybridFlag [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag/@insertionpoint,HybridFlagInsertionPoint [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/IdentificationQualifier,DeterminationQualifier [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/IdentificationQualifier/@insertionpoint,DeterminationQualifierInsertionPoint [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/NameAddendum,ScientificNameAddendum [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/CultivarName,CultivarName [4]
+Unit/Identifications/Identification[4]/Result/TaxonIdentified/NameComments,NomenclaturalNote [4]
+Unit/Identifications/Identification[4]/Identifiers/IdentifierRole,DeterminerRole [4]
+Unit/Identifications/Identification[4]/Identifiers/IdentifiersText,Determiner [4]
+Unit/Identifications/Identification[4]/Date/DateText,DeterminationDateString [4]
+Unit/Identifications/Identification[4]/Date/ISODateTimeBegin,DeterminationDate [4]
+Unit/Identifications/Identification[4]/Notes,DeterminationNotes [4]
+Unit/Identifications/Identification[5]/PreferredFlag,CurrentDetermination [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/FullScientificNameString,ScientificName [5]
+"Unit/Identifications/Identification[5]/Result/TaxonIdentified/HigherTaxa/HigherTaxon[HigherTaxonRank=""familia""]/HigherTaxonName",Family [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/GenusOrMonomial,GenusOrMonomial [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/FirstEpithet,FirstEpithet [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/Rank,InfraspecificRank [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/InfraspecificEpithet,InfraspecificEpithet [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeam,Author [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeamParenthesis,BasionymAuthor [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag,HybridFlag [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag/@insertionpoint,HybridFlagInsertionPoint [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/IdentificationQualifier,DeterminationQualifier [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/IdentificationQualifier/@insertionpoint,DeterminationQualifierInsertionPoint [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/NameAddendum,ScientificNameAddendum [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/CultivarName,CultivarName [5]
+Unit/Identifications/Identification[5]/Result/TaxonIdentified/NameComments,NomenclaturalNote [5]
+Unit/Identifications/Identification[5]/Identifiers/IdentifierRole,DeterminerRole [5]
+Unit/Identifications/Identification[5]/Identifiers/IdentifiersText,Determiner [5]
+Unit/Identifications/Identification[5]/Date/DateText,DeterminationDateString [5]
+Unit/Identifications/Identification[5]/Date/ISODateTimeBegin,DeterminationDate [5]
+Unit/Identifications/Identification[5]/Notes,DeterminationNotes [5]
+Unit/Identifications/Identification[6]/PreferredFlag,CurrentDetermination [6]
+"Unit/Identifications/Identification[6]/Result/TaxonIdentified/HigherTaxa/HigherTaxon[HigherTaxonRank=""familia""]/HigherTaxonName",Family [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/FullScientificNameString,ScientificName [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/GenusOrMonomial,GenusOrMonomial [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/FirstEpithet,FirstEpithet [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/Rank,InfraspecificRank [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/InfraspecificEpithet,InfraspecificEpithet [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeam,Author [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/AuthorTeamParenthesis,BasionymAuthor [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag,HybridFlag [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/HybridFlag/@insertionpoint,HybridFlagInsertionPoint [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/IdentificationQualifier,DeterminationQualifier [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/IdentificationQualifier/@insertionpoint,DeterminationQualifierInsertionPoint [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/NameAddendum,ScientificNameAddendum [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/ScientificName/NameAtomised/Botanical/CultivarName,CultivarName [6]
+Unit/Identifications/Identification[6]/Result/TaxonIdentified/NameComments,NomenclaturalNote [6]
+Unit/Identifications/Identification[6]/Identifiers/IdentifierRole,DeterminerRole [6]
+Unit/Identifications/Identification[6]/Identifiers/IdentifiersText,Determiner [6]
+Unit/Identifications/Identification[6]/Date/DateText,DeterminationDateString [6]
+Unit/Identifications/Identification[6]/Date/ISODateTimeBegin,DeterminationDate [6]
+Unit/Identifications/Identification[6]/Notes,DeterminationNotes [6]
+Unit/SpecimenUnit/NomenclaturalTypeDesignations/NomenclaturalTypeDesignation/TypeStatus,TypeStatus
+Unit/SpecimenUnit/NomenclaturalTypeDesignations/NomenclaturalTypeDesignation/DoubtfulFlag,TypeStatusDoubtfulFlag
+Unit/SpecimenUnit/NomenclaturalTypeDesignations/NomenclaturalTypeDesignation/TypifiedName/FullScientificNameString,TypifiedName,
+Unit/SpecimenUnit/NomenclaturalTypeDesignations/NomenclaturalTypeDesignation/VerificationDate,TypeStatusDesignationVerificationDate,
+Unit/SpecimenUnit/NomenclaturalTypeDesignations/NomenclaturalTypeDesignation/VerificationNotes,TypeStatusDesignationVerificationNotes,
+Unit/SpecimenUnit/NomenclaturalTypeDesignations/NomenclaturalTypeDesignation/Verifier/FullName,TypeStatusDesignationVerifier,
+Unit/SpecimenUnit/History/PreviousUnits/PreviousUnit/PreviousSourceInstitutionID,PreviousSourceInstitutionID,
+Unit/SpecimenUnit/History/PreviousUnits/PreviousUnit/PreviousUnitID,PreviousUnitID,
+Unit/SpecimenUnit/DuplicatesDistributedTo,DuplicatesDistributedTo,
+Unit/HerbariumUnit/DuplicatesDistributedTo,DuplicatesDistributedTo,
+Unit/HerbariumUnit/LoanDate,LoanDate,
+Unit/HerbariumUnit/LoanDestination,LoanDestination,
+Unit/HerbariumUnit/LoanForBotanist,LoanForBotanist,
+Unit/HerbariumUnit/LoanIdentifier,LoanIdentifier,
+Unit/HerbariumUnit/LoanReturnDate,LoanReturnDate,
+"Unit/MeasurementsOrFacts/MeasurementOrFact/MeasurementOrFactAtomised[Parameter=""CultivatedOccurrence""]/LowerValue",CultivatedOccurrence,Unit/HerbariumUnit/CultivatedOccurrence will also work
+"Unit/MeasurementsOrFacts/MeasurementOrFact/MeasurementOrFactAtomised[Parameter=""NaturalOccurrence""]/LowerValue",NaturalOccurrence,Unit/HerbariumUnit/NaturalOccurrence will also work
+"Unit/MeasurementsOrFacts/MeasurementOrFact/MeasurementOrFactAtomised[Parameter=""Phenology""]/LowerValue",Phenology,Unit/UnitExtension/HispidUnit/Phenology will also work
