@@ -6,7 +6,7 @@ require_once('avhdb.php');
 date_default_timezone_set('Australia/Melbourne');
 
 //$dir = 'C:/Users/nklaze/Documents/NetBeansProjects/dehispidator/xml/mel_depth';
-$dir = 'C:/Users/NKlaze/Documents/SVN/dehispidator/trunk/dehispidator/xml/JCT';
+$dir = 'C:\\Users\\nklaze\\Documents\\Git\\dehispidator\\xml';
 if (is_dir($dir)) {
     if ($dh = opendir($dir)) {
         while (($file = readdir($dh)) !== false) {

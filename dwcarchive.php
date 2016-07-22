@@ -24,6 +24,9 @@ class DwcArchive {
         if (in_array($this->operator, array('IS NULL', 'IS NOT NULL'))) {
             $where = "\"$this->field\" $this->operator";
         }
+        elseif ($this->operator == 'IN') {
+            $where = "\"$this->field\" IN ($this->value)";
+        }
         else {
             $where = "\"$this->field\"$this->operator'$this->value'";
         }
