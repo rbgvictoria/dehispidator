@@ -14,6 +14,12 @@
 require_once('Encoding.php');
 
 class Hispid5ToCsv {
+    
+    private $establishmentMeansMapping;
+    
+    public function __construct() {
+        $this->establishmentMeansMapping = json_decode(file_get_contents('config/mapping_establishmentMeans.json'));
+    }
 
     /**
      * removeWrapper function
@@ -177,9 +183,17 @@ class Hispid5ToCsv {
             
             $row = array_merge($row, $this->CollectionCode($unit));
             
+            $row[] = $this->locality($unit);
+            
             $row = array_merge($row, $this->habitat($unit));
             
             $row = array_merge($row, $this->dnaSequences($unit));
+            
+            $row = array_merge($row, $this->bushBlitz($unit));
+            
+            if ($est = $this->establishmentMeans($unit)) {
+                $row[] = $est;
+            }
         
             $data[] = $row;
         }
@@ -402,7 +416,7 @@ class Hispid5ToCsv {
      */
     private function MeasurementsOrFacts($unit) {
         $row = array();
-        $establishmentmeans = array();
+        //$establishmentmeans = array();
         $measurementsorfacts = $unit->getElementsByTagName('MeasurementOrFactAtomised');
         if ($measurementsorfacts->length) {
             foreach ($measurementsorfacts as $measurementorfact) {
@@ -432,8 +446,8 @@ class Hispid5ToCsv {
                             break;
                     }
                     
-                    if (in_array($parameter, array('CultivatedOccurrence', 'NaturalOccurrence')))
-                        $establishmentmeans[] = $lowervalue;
+                    /*if (in_array($parameter, array('CultivatedOccurrence', 'NaturalOccurrence')))
+                        $establishmentmeans[] = $lowervalue;*/
                     
                     if (in_array($parameter, array('CultivatedOccurrence', 'NaturalOccurrence', 'Phenology', 'Voucher', 'Habit')))
                     $row[] = array(
@@ -466,7 +480,7 @@ class Hispid5ToCsv {
                 'column' => 'Unit/MeasurementsOrFacts/MeasurementOrFact/MeasurementOrFactAtomised[Parameter="CultivatedOccurrence"]/LowerValue',
                 'value' => $cultivated->item(0)->nodeValue
             );
-            $establishmentmeans[] = $cultivated->item(0)->nodeValue;
+            //$establishmentmeans[] = $cultivated->item(0)->nodeValue;
         }
         
         $natural = $unit->getElementsByTagName('NaturalOccurrence');
@@ -475,19 +489,21 @@ class Hispid5ToCsv {
                 'column' => 'Unit/MeasurementsOrFacts/MeasurementOrFact/MeasurementOrFactAtomised[Parameter="NaturalOccurrence"]/LowerValue',
                 'value' => $natural->item(0)->nodeValue
             );
-            $establishmentmeans[] = $natural->item(0)->nodeValue;
+            //$establishmentmeans[] = $natural->item(0)->nodeValue;
         }
         
         /*
          * Concatenates Cultivated Occurrence and Natural Occurrence into establishmentMeans
          */
-        if ($establishmentmeans){
+        
+        
+        /*if ($establishmentmeans){
             $establishmentmeans = implode('; ', $establishmentmeans);
             $row[] = array(
                 'column' => 'dwc:establishmentMeans',
                 'value' => $establishmentmeans
             );
-        }
+        }*/
         
         /*
          * Frequency in HISPID element //HispidUnit/Frequency
@@ -532,6 +548,62 @@ class Hispid5ToCsv {
             
         }
         
+        return $row;
+    }
+    
+    private function establishmentMeans($unit) {
+        $row = [];
+        $establishmentMeans = FALSE;
+        $list = $unit->getElementsByTagName('EstablishmentMeans');
+        if ($list->length) {
+            $establishmentMeans = $list->item(0)->nodeValue;
+        }
+        else {
+            $nat = FALSE;
+            $cult = FALSE;
+            
+            $mofs = $unit->getElementsByTagName('MeasurementOrFactAtomised');
+            if ($mofs->length) {
+                foreach ($mofs as $mof) {
+                    $param = @$mof->getElementsByTagName('Parameter')->item(0)->nodeValue;
+                    $val = @$mof->getElementsByTagName('LowerValue')->item(0)->nodeValue;
+                    if ($param && $val) {
+                        switch ($param) {
+                            case 'CultivatedOccurrence':
+                            case 'cultivated occurrence':
+                                $cult = strtolower($val);
+                                break;
+                            case 'NaturalOccurrence':
+                            case 'natural occurrence':
+                                $nat = 'NaturalOccurrence';
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
+            else {
+                $nat = @strtolower($unit->getElementsByTagName('NaturalOccurrence')->item(0)->nodeValue);
+                $cult = @strtolower($unit->getElementsByTagName('CultivatedOccurrence')->item(0)->nodeValue);
+            }
+            if ($nat || $cult) {
+                $conf = $this->establishmentMeansMapping;
+                foreach ($conf as $item) {
+                    $mapping = (array) $item;
+                    if (($mapping['abcd:NaturalOccurrence'] == $nat || (!$mapping['abcd:NaturalOccurrence'] && !$nat)) && 
+                            ($mapping['abcd:CultivatedOccurrence'] == $cult || (!$mapping['abcd:CultivatedOccurrence'] && !$cult))) {
+                        $establishmentMeans = $mapping['dwc:establishmentMeans'];
+                    }
+                }
+            }
+        }
+        if ($establishmentMeans){
+            $row = array(
+                'column' => 'dwc:establishmentMeans',
+                'value' => $establishmentMeans
+            );
+        }
         return $row;
     }
     
@@ -1468,7 +1540,7 @@ class Hispid5ToCsv {
             $coordinatemethod = $nodelist->item(0)->nodeValue;
             if ($georeferencedby) {
                 $ret[] = array(
-                    'column' => 'dwc:georeferencedProtocol',
+                    'column' => 'dwc:georeferenceProtocol',
                     'value' => $coordinatemethod
                 );
             }
@@ -1480,7 +1552,7 @@ class Hispid5ToCsv {
                     );
                 else {
                     $ret[] = array(
-                        'column' => 'dwc:georeferencedProtocol',
+                        'column' => 'dwc:georeferenceProtocol',
                         'value' => $coordinatemethod
                     );
                 }
@@ -1894,6 +1966,17 @@ class Hispid5ToCsv {
         return FALSE;
     }
     
+    function locality($unit) {
+        $list = $unit->getElementsByTagName('LocalityText');
+        if ($list->length) {
+            $loc = $list->item(0)->nodeValue;
+            return [
+                'column' => 'dwc:locality',
+                'value' => $loc
+            ];
+        }
+    }
+    
     function habitat($unit) {
         $ret = array();
         $hab = array();
@@ -2041,5 +2124,34 @@ class Hispid5ToCsv {
         return $ret;
     }
     
+    function bushBlitz($unit)
+    {
+        $ret = [];
+        $blitz = false;
+        $surveys = $unit->getElementsByTagName('NamedCollectionOrSurvey');
+        if ($surveys->length) {
+            $blitz = $surveys->item(0)->nodeValue;
+        }
+        else {
+            $projects = $unit->getElementsByTagName('ProjectTitle');
+            if ($projects->length) {
+                $blitz = $projects->item(0)->nodeValue;
+            }
+        }
+        if ($blitz && substr($blitz, 0, strlen('Bush Blitz')) == 'Bush Blitz') {
+            $ret[] = [
+                'column' => 'avh:bushBlitzExpedition',
+                'value' => $blitz
+            ];
+            $eventRemarks = $unit->getElementsByTagName('eventRemarks');
+            if ($eventRemarks->length == 0) {
+                $ret[] = [
+                    'column' => 'Unit/UnitExtension/Event/eventRemarks',
+                    'value' => $blitz
+                ];
+            }
+        }
+        return $ret;
+    }
 }
 ?>

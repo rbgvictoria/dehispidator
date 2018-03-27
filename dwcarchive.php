@@ -41,45 +41,37 @@ EOT;
         
         if ($stmt->fetchColumn() > 0) {
             $handle = fopen('archive/unit.csv', 'w');
-            $firstrow = array("ID","institutionCode","collectionCode","catalogNumber","occurrenceID","basisOfRecord","preparations",
-                "modified","recordedBy","AdditionalCollectors","recordNumber","eventDate","verbatimEventDate","country",
-                "countryCode","stateProvince","locality","GeneralisedLocality","NearNamedPlaceRelationship","decimalLatitude",
-                "decimalLongitude","verbatimCoordinates","geodeticDatum","coordinateUncertaintyInMeters","georeferencedBy",
-                "georeferencedProtocol","minimumElevationInMeters","maximumElevationInMeters","verbatimElevation","minimumDepthInMeters",
-                "maximumDepthInMeters","verbatimDepth","habitat","occurrenceRemarks","scientificName","kingdom","phylum","class",
-                "order","family","genus","specificEpithet","taxonRank","infraspecificEpithet","CultivarName","scientificNameAuthorship",
-                "nomenclaturalStatus","identificationQualifier","IdentificationQualifierInsertionPoint","DwCIdentificationQualifier",
-                "ScientificNameAddendum","DeterminerRole","identifiedBy","dateIdentified","VerbatimIdentificationDate","identificationRemarks",
-                "previousIdentifications","typeStatus","TypifiedName","DoubtfulFlag","Verifier","VerificationDate","VerificationNotes",
-                "DwCTypeStatus","ExHerb","ExHerbCatalogueNumber","DuplicatesDistributedTo","LoanIdentifier","LoanDestination",
-                "AustralianHerbariumRegion","IBRARegion","IBRASubregion","Phenology","CultivatedOccurrence","NaturalOccurrence",
-                "establishmentMeans","verbatimLatitude","verbatimLongitude","coordinatePrecision","verbatimCoordinateSystem",
-                "verbatimSRS","locationRemarks","associatedTaxa","ABCDAssemblageID","HISPIDSubstrate","HISPIDSoil",
-                "HISPIDVegetation","HISPIDAspect","HISPIDMiscellaneousNotes","HISPIDFrequency","HISPIDHabit","HISPIDVoucher","county",
-                "continent","subclass","georeferencedDate","georeferenceSources","georeferenceVerificationStatus","georeferenceRemarks",
-                "identificationID", "lifeStage", "associatedSequences", "waterBody", "islandGroup", "island");
+            $firstrow = array("ID","modified","institutionCode","collectionCode","basisOfRecord",
+                "occurrenceID","catalogNumber","recordNumber","recordedBy","lifeStage","reproductiveCondition",
+                "establishmentMeans","preparations","associatedSequences","associatedTaxa","occurrenceRemarks",
+                "previousIdentifications","eventDate","verbatimEventDate","habitat","continent","waterBody",
+                "islandGroup","island","country","countryCode","stateProvince","county","locality",
+                "verbatimLocality","minimumElevationInMeters","maximumElevationInMeters","verbatimElevation",
+                "minimumDepthInMeters","maximumDepthInMeters","verbatimDepth","locationRemarks",
+                "decimalLatitude","decimalLongitude","geodeticDatum","coordinateUncertaintyInMeters",
+                "coordinatePrecision","verbatimCoordinates","verbatimLatitude","verbatimLongitude",
+                "verbatimCoordinateSystem","verbatimSRS","georeferencedBy","georeferencedDate",
+                "georeferenceProtocol","georeferenceSources","georeferenceVerificationStatus",
+                "georeferenceRemarks","identificationID","identificationQualifier","typeStatus","identifiedBy",
+                "dateIdentified","identificationRemarks","scientificName","kingdom","phylum","class","order",
+                "family","genus","specificEpithet","infraspecificEpithet","taxonRank","scientificNameAuthorship",
+                "nomenclaturalStatus", "eventRemarks", "bushBlitzExpedition");
             fputcsv($handle, $firstrow);
 
             $select = <<<EOT
-SELECT "CoreID" AS "ID", "institutionCode", "collectionCode", "catalogNumber",
-    "occurrenceID", "basisOfRecord", "preparations", "modified", "recordedBy", "AdditionalCollectors", 
-    "collectorsFieldNumber", "eventDate", "verbatimEventDate", "country", "countryCode", "stateProvince", "locality", 
-    "GeneralisedLocality", "NearNamedPlaceRelationship", "decimalLatitude", "decimalLongitude", "verbatimCoordinates", 
-    "geodeticDatum", "coordinateUncertaintyInMeters", "georeferencedBy", "georeferencedProtocol", 
-    "minimumElevationInMeters", "maximumElevationInMeters", "verbatimElevation", "minimumDepthInMeters", 
-    "maximumDepthInMeters", "verbatimDepth", "habitat", "occurrenceRemarks", "scientificName", "kingdom", 
-    "phylum", "class", "order", "family", "genus", "specificEpithet", "taxonRank", "infraspecificEpithet", 
-    "CultivarName", "scientificNameAuthorship", "nomenclaturalStatus", "identificationQualifier", 
-    "IdentificationQualifierInsertionPoint", "DwCIdentificationQualifier", "ScientificNameAddendum", "DeterminerRole", 
-    "identifiedBy", "dateIdentified", "VerbatimIdentificationDate", "identificationRemarks", "previousIdentifications", "typeStatus", 
-    "TypifiedName", "DoubtfulFlag", "Verifier", "VerificationDate", "VerificationNotes", "DwCTypeStatus", "ExHerb", 
-    "ExHerbCatalogueNumber", "DuplicatesDistributedTo", "LoanIdentifier", "LoanDestination", "Australian Herbarium Region", 
-    "IBRARegion", "IBRASubregion", "Phenology", "CultivatedOccurrence", "NaturalOccurrence", "establishmentMeans",
-    "verbatimLatitude","verbatimLongitude","coordinatePrecision","verbatimCoordinateSystem","verbatimSRS",
-    "locationRemarks","associatedTaxa","abcd_AssemblageID","Substrate","Soil","Vegetation","Aspect",
-    "abcd_UnitNotes","hispid_Frequency","hispid_Habit","hispid_Voucher","county","continent","subclass","georeferencedDate",
-    "georeferenceSources","georeferenceVerificationStatus","georeferenceRemarks","identificationID","lifeStage","associatedSequences",
-    "waterBody","islandGroup",island
+SELECT "CoreID" as id,"modified","institutionCode","collectionCode","basisOfRecord","occurrenceID",
+    "catalogNumber","recordNumber","recordedBy","lifeStage","reproductiveCondition","establishmentMeans",
+    "preparations","associatedSequences","associatedTaxa","occurrenceRemarks","previousIdentifications",
+    "eventDate","verbatimEventDate","habitat","continent","waterBody","islandGroup","island","country",
+    "countryCode","stateProvince","county","locality","verbatimLocality","minimumElevationInMeters",
+    "maximumElevationInMeters","verbatimElevation","minimumDepthInMeters","maximumDepthInMeters","verbatimDepth",
+    "locationRemarks","decimalLatitude","decimalLongitude","geodeticDatum","coordinateUncertaintyInMeters",
+    "coordinatePrecision","verbatimCoordinates","verbatimLatitude","verbatimLongitude",
+    "verbatimCoordinateSystem","verbatimSRS","georeferencedBy","georeferencedDate","georeferenceProtocol",
+    "georeferenceSources","georeferenceVerificationStatus","georeferenceRemarks","identificationID",
+    "identificationQualifier","typeStatus","identifiedBy","dateIdentified","identificationRemarks",
+    "scientificName","kingdom","phylum","class","order","family","genus","specificEpithet","infraspecificEpithet",
+    "taxonRank","scientificNameAuthorship","nomenclaturalStatus", "event_remarks", "bush_blitz_expedition"
 FROM public.core
 WHERE $where AND "Quarantine" IS NULL
 EOT;
@@ -115,7 +107,9 @@ EOT;
         $stmt->execute();
         if ($stmt->fetchColumn() > 0) {
             $handle = fopen('archive/determinationhistory.csv', 'w');
-            fwrite($handle, '"CoreID","scientificName","kingdom","phylum","class","order","family","genus","specificEpithet","taxonRank","infraspecificEpithet","CultivarName","scientificNameAuthorship","nomenclaturalStatus","identificationQualifier","IdentificationQualifierInsertionPoint","DwCIdentificationQualifier","ScientificNameAddendum","DeterminerRole","identifiedBy","dateIdentified","VerbatimIdentificationDate","identificationRemarks","identificationID"' . "\n");
+            $firstrow = ["CoreID","identificationID","identificationQualifier","identifiedBy","dateIdentified",
+                "identificationRemarks","scientificName","scientificNameAuthorship","nomenclaturalStatus"];
+            fputcsv($handle, $firstrow);
             
             $select = <<<EOT
 SELECT c."CoreID", e."scientificName", e."kingdom", e."phylum", e."class", e."order", e."family", e."genus", 

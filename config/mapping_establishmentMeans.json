@@ -1,0 +1,57 @@
+[
+    {
+        "abcd:NaturalOccurrence": null,
+        "abcd:CultivatedOccurrence": "cultivated",
+        "dwc:establishmentMeans": "cultivated"
+    },
+    {
+        "abcd:NaturalOccurrence": null,
+        "abcd:CultivatedOccurrence": "presumably cultivated",
+        "dwc:establishmentMeans": "cultivated"
+    },
+    {
+        "abcd:NaturalOccurrence": "native",
+        "abcd:CultivatedOccurrence": null,
+        "dwc:establishmentMeans": "native"
+    },
+    {
+        "abcd:NaturalOccurrence": "native",
+        "abcd:CultivatedOccurrence": "not cultivated",
+        "dwc:establishmentMeans": "native"
+    },
+    {
+        "abcd:NaturalOccurrence": "native",
+        "abcd:CultivatedOccurrence": "unknown",
+        "dwc:establishmentMeans": "native"
+    },
+    {
+        "abcd:NaturalOccurrence": "native",
+        "abcd:CultivatedOccurrence": "cultivated",
+        "dwc:establishmentMeans": "cultivated"
+    },
+    {
+        "abcd:NaturalOccurrence": "not native",
+        "abcd:CultivatedOccurrence": null,
+        "dwc:establishmentMeans": "introduced"
+    },
+    {
+        "abcd:NaturalOccurrence": "not native",
+        "abcd:CultivatedOccurrence": "cultivated",
+        "dwc:establishmentMeans": "cultivated"
+    },
+    {
+        "abcd:NaturalOccurrence": "not native",
+        "abcd:CultivatedOccurrence": "not cultivated",
+        "dwc:establishmentMeans": "introduced"
+    },
+    {
+        "abcd:NaturalOccurrence": "not native",
+        "abcd:CultivatedOccurrence": "presumably cultivated",
+        "dwc:establishmentMeans": "cultivated"
+    },
+    {
+        "abcd:NaturalOccurrence": "not native",
+        "abcd:CultivatedOccurrence": "possibly cultivated",
+        "dwc:establishmentMeans": "introduced"
+    }
+]

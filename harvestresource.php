@@ -47,14 +47,12 @@ class HarvestResource {
         }*/
         $filter = "<greaterThan path=\"/DataSets/DataSet/Units/Unit/DateLastEdited\">$this->resourcelastupdated</greaterThan>";
         
-        
-        
         $result = $biocase->biocaseCountFilter($filter);
 
         $doc = new DOMDocument('1.0', 'UTF-8');
         
         if ($doc->loadXML($this->utf8_for_xml($result))) {
-
+            //echo $doc->saveXML();
             $list = $doc->getElementsByTagName('count');
             $recordCount = $list->item(0)->nodeValue;
 

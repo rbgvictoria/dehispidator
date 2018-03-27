@@ -4,28 +4,27 @@ class DwcArchive {
     private $db;
     private $units;
     private $dethist;
-    private $filename;
     
     public function __construct($db) {
         $this->db = $db;
         $this->units = fopen('archive/unit.csv', 'w');
         $firstrow = array("ID","institutionCode","collectionCode","catalogNumber","occurrenceID","basisOfRecord","preparations",
-            "modified","recordedBy","AdditionalCollectors","recordNumber","eventDate","verbatimEventDate","country",
-            "countryCode","stateProvince","locality","GeneralisedLocality","NearNamedPlaceRelationship","decimalLatitude",
-            "decimalLongitude","verbatimCoordinates","geodeticDatum","coordinateUncertaintyInMeters","georeferencedBy",
-            "georeferencedProtocol","minimumElevationInMeters","maximumElevationInMeters","verbatimElevation","minimumDepthInMeters",
-            "maximumDepthInMeters","verbatimDepth","habitat","occurrenceRemarks","scientificName","kingdom","phylum","class",
-            "order","family","genus","specificEpithet","taxonRank","infraspecificEpithet","CultivarName","scientificNameAuthorship",
-            "nomenclaturalStatus","identificationQualifier","IdentificationQualifierInsertionPoint","DwCIdentificationQualifier",
-            "ScientificNameAddendum","DeterminerRole","identifiedBy","dateIdentified","VerbatimIdentificationDate","identificationRemarks",
-            "previousIdentifications","typeStatus","TypifiedName","DoubtfulFlag","Verifier","VerificationDate","VerificationNotes",
-            "DwCTypeStatus","ExHerb","ExHerbCatalogueNumber","DuplicatesDistributedTo","LoanIdentifier","LoanDestination",
-            "AustralianHerbariumRegion","IBRARegion","IBRASubregion","Phenology","CultivatedOccurrence","NaturalOccurrence",
-            "establishmentMeans","verbatimLatitude","verbatimLongitude","coordinatePrecision","verbatimCoordinateSystem",
-            "verbatimSRS","locationRemarks","associatedTaxa","ABCDAssemblageID","HISPIDSubstrate","HISPIDSoil",
-            "HISPIDVegetation","HISPIDAspect","HISPIDMiscellaneousNotes","HISPIDFrequency","HISPIDHabit","HISPIDVoucher","county",
-            "continent","subclass","georeferencedDate","georeferenceSources","georeferenceVerificationStatus","georeferenceRemarks",
-            "identificationID");
+                "modified","recordedBy","AdditionalCollectors","recordNumber","eventDate","verbatimEventDate","country",
+                "countryCode","stateProvince","verbatimLocality","decimalLatitude",
+                "decimalLongitude","verbatimCoordinates","geodeticDatum","coordinateUncertaintyInMeters","georeferencedBy",
+                "georeferencedProtocol","minimumElevationInMeters","maximumElevationInMeters","verbatimElevation","minimumDepthInMeters",
+                "maximumDepthInMeters","verbatimDepth","habitat","occurrenceRemarks","scientificName","kingdom","phylum","class",
+                "order","family","genus","specificEpithet","taxonRank","infraspecificEpithet","CultivarName","scientificNameAuthorship",
+                "nomenclaturalStatus","identificationQualifier","IdentificationQualifierInsertionPoint","DwCIdentificationQualifier",
+                "ScientificNameAddendum","DeterminerRole","identifiedBy","dateIdentified","VerbatimIdentificationDate","identificationRemarks",
+                "previousIdentifications","typeStatus","TypifiedName","DoubtfulFlag","Verifier","VerificationDate","VerificationNotes",
+                "DwCTypeStatus","ExHerb","ExHerbCatalogueNumber","DuplicatesDistributedTo","LoanIdentifier","LoanDestination",
+                "AustralianHerbariumRegion","IBRARegion","IBRASubregion","Phenology","CultivatedOccurrence","NaturalOccurrence",
+                "establishmentMeans","verbatimLatitude","verbatimLongitude","coordinatePrecision","verbatimCoordinateSystem",
+                "verbatimSRS","locationRemarks","associatedTaxa","ABCDAssemblageID","HISPIDSubstrate","HISPIDSoil",
+                "HISPIDVegetation","HISPIDAspect","HISPIDMiscellaneousNotes","HISPIDFrequency","HISPIDHabit","HISPIDVoucher","county",
+                "continent","subclass","georeferencedDate","georeferenceSources","georeferenceVerificationStatus","georeferenceRemarks",
+                "identificationID", "lifeStage", "associatedSequences", "waterBody", "islandGroup", "island");
         fputcsv($this->units, $firstrow);
         
         $this->dethist = fopen('archive/determinationhistory.csv', 'w');
@@ -48,10 +47,10 @@ EOT;
         
         if ($stmt->fetchColumn() > 0) {
             $select = <<<EOT
-SELECT "CoreID" AS "ID", "institutionCode", "collectionCode", "collectionCode"||' '||"catalogNumber" AS"catalogNumber",
+SELECT "CoreID" AS "ID", "institutionCode", "collectionCode", "catalogNumber",
     "occurrenceID", "basisOfRecord", "preparations", "modified", "recordedBy", "AdditionalCollectors", 
     "collectorsFieldNumber", "eventDate", "verbatimEventDate", "country", "countryCode", "stateProvince", "locality", 
-    "GeneralisedLocality", "NearNamedPlaceRelationship", "decimalLatitude", "decimalLongitude", "verbatimCoordinates", 
+    "decimalLatitude", "decimalLongitude", "verbatimCoordinates", 
     "geodeticDatum", "coordinateUncertaintyInMeters", "georeferencedBy", "georeferencedProtocol", 
     "minimumElevationInMeters", "maximumElevationInMeters", "verbatimElevation", "minimumDepthInMeters", 
     "maximumDepthInMeters", "verbatimDepth", "habitat", "occurrenceRemarks", "scientificName", "kingdom", 
@@ -65,7 +64,8 @@ SELECT "CoreID" AS "ID", "institutionCode", "collectionCode", "collectionCode"||
     "verbatimLatitude","verbatimLongitude","coordinatePrecision","verbatimCoordinateSystem","verbatimSRS",
     "locationRemarks","associatedTaxa","abcd_AssemblageID","Substrate","Soil","Vegetation","Aspect",
     "abcd_UnitNotes","hispid_Frequency","hispid_Habit","hispid_Voucher","county","continent","subclass","georeferencedDate",
-    "georeferenceSources","georeferenceVerificationStatus","georeferenceRemarks","identificationID"
+    "georeferenceSources","georeferenceVerificationStatus","georeferenceRemarks","identificationID","lifeStage","associatedSequences",
+    "waterBody","islandGroup",island
 FROM public.core
 WHERE "CoreID" IN ($values) AND "Quarantine" IS NULL
 LIMIT 100000
@@ -113,12 +113,12 @@ EOT;
             return FALSE;
     }
     
-    private function zipItUp() {
+    public function zipItUp($filename) {
         chdir('archive');
         $zip = new ZipArchive;
-        if ($zip->open("$this->filename.zip", ZipArchive::CREATE) === TRUE) {
+        if ($zip->open("$filename.zip", ZipArchive::CREATE) === TRUE) {
             $zip->addFile('unit.csv');
-            if ($this->extension) $zip->addFile('determinationhistory.csv');
+            //if ($this->extension) $zip->addFile('determinationhistory.csv');
             $zip->addFile('meta.xml');
             $zip->addFile('eml.xml');
             $zip->close();
