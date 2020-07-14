@@ -15,5 +15,5 @@ require_once('dwcarchive.php');
 
 date_default_timezone_set('Australia/Melbourne');
 $lasttime = date('Y-m-d');
-//$lasttime = '2018-01-24';
+//$lasttime = '2018-06-22';
 new DwcArchive($pgdb, 'TimeLoaded', '>', $lasttime, 'avh_delta_' . date('Ymd_Hi'));

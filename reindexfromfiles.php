@@ -5,8 +5,7 @@ require_once('hispid5tocsv.php');
 require_once('avhdb.php');
 date_default_timezone_set('Australia/Melbourne');
 
-//$dir = 'C:/Users/nklaze/Documents/NetBeansProjects/dehispidator/xml/mel_depth';
-$dir = 'C:\\Users\\nklaze\\Documents\\Git\\dehispidator\\xml\\bushblitz';
+$dir = 'C:\\Users\\nklazenga\\code\\Git\\dehispidator\\xml\\MEL AVH data.ABCD_AVH';
 if (is_dir($dir)) {
     if ($dh = opendir($dir)) {
         while (($file = readdir($dh)) !== false) {
@@ -52,6 +51,7 @@ function uploadBiocaseFile($db, $xml, $reindex=FALSE, $diagnostics=FALSE, $resou
     
     $upload = new AvhDb($db, $data, $config);
     $upload->uploadCoreData($reindex);
+    $upload->uploadExtensionData($reindex);
 }
 
 function utf8_for_xml($string) {

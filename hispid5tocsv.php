@@ -18,7 +18,7 @@ class Hispid5ToCsv {
     private $establishmentMeansMapping;
     
     public function __construct() {
-        $this->establishmentMeansMapping = json_decode(file_get_contents('config/mapping_establishmentMeans.json'));
+        $this->establishmentMeansMapping = json_decode(file_get_contents('config/mapping_establishment_means.json'));
     }
 
     /**
@@ -264,6 +264,18 @@ class Hispid5ToCsv {
                 $row[] = array(
                     'column' => 'dwc:catalogNumber',
                     'value' => str_replace(':', ' ', $unitid)
+                );
+            }
+            elseif ($sourceinstitutionid == 'JCT') {
+                $list = $unit->getElementsByTagName('UnitID');
+                $unitid = $list->item(0)->nodeValue;
+                $row[] = array(
+                    'column' => 'dwc:collectionCode',
+                    'value' => substr($unitid, 0, strpos($unitid, '-'))
+                );
+                $row[] = array(
+                    'column' => 'dwc:catalogNumber',
+                    'value' => $unitid
                 );
             }
             else {
@@ -588,12 +600,15 @@ class Hispid5ToCsv {
                 $cult = @strtolower($unit->getElementsByTagName('CultivatedOccurrence')->item(0)->nodeValue);
             }
             if ($nat || $cult) {
-                $conf = $this->establishmentMeansMapping;
-                foreach ($conf as $item) {
-                    $mapping = (array) $item;
-                    if (($mapping['abcd:NaturalOccurrence'] == $nat || (!$mapping['abcd:NaturalOccurrence'] && !$nat)) && 
-                            ($mapping['abcd:CultivatedOccurrence'] == $cult || (!$mapping['abcd:CultivatedOccurrence'] && !$cult))) {
-                        $establishmentMeans = $mapping['dwc:establishmentMeans'];
+                $map = $this->findMappingItem($nat, $cult);
+                $filtered = array_filter($this->establishmentMeansMapping, $map);
+                if (count($filtered) > 0) { // mapping item found
+                    $mappingItem = array_values($filtered)[0];
+                    if ($mappingItem->{'dwc:establishmentMeans'}) { // establihment means for this combination of NaturalOccurrence and CultivatedOccurrence exists
+                        $row = array(
+                            'column' => 'dwc:establishmentMeans',
+                            'value' => $mappingItem->{'dwc:establishmentMeans'}
+                        );
                     }
                 }
             }
@@ -605,6 +620,13 @@ class Hispid5ToCsv {
             );
         }
         return $row;
+    }
+    
+    protected function findMappingItem($nat, $cult) {
+        return function($item) use ($nat, $cult) {
+            return $item->{"abcd:NaturalOccurrence"} == $nat &&
+                    $item->{'abcd:CultivatedOccurrence'} == $cult; 
+        };
     }
     
     private function SiteMeasurementsOrFacts($unit) {
@@ -1268,16 +1290,16 @@ class Hispid5ToCsv {
      * @param DOMDocument $doc
      * @return array
      */
-    public function DeterminationHistory($doc) {
+    public function DeterminationHistory(DOMDocument $doc) {
         $ret = array();
         $units = $doc->getElementsByTagName('Unit');
         if ($units->length) {
             foreach ($units as $key=>$unit) {
                 $identifications = $unit->getElementsByTagName('Identification');
-                if ($identifications->length > 1) {
-                    foreach ($identifications as $identification) {
-                        $preferredflag = $identification->getElementsByTagName('PreferredFlag');
-                        if (!$preferredflag->length || !$preferredflag->item(0)->nodeValue) {
+                if ($identifications->length) {
+                   foreach ($identifications as $identification) {
+//                        $preferredflag = $identification->getElementsByTagName('PreferredFlag');
+//                        if (!$preferredflag->length || !$preferredflag->item(0)->nodeValue) {
                             $row =array();
                             $row[] = array(
                                 'column' => 'CoreID',
@@ -1304,7 +1326,7 @@ class Hispid5ToCsv {
                             );
 
                             $ret[] = array_merge($row, $this->parseIdentification($identification, FALSE));
-                        }
+//                        }
                     }
                 }
             }

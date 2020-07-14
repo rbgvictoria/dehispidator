@@ -89,7 +89,7 @@ EOT;
     }
 
     function getDeterminationHistory() {
-        if (in_array($this->operator, array('IS NULL', 'IS NOT NULL'))) {
+        if (in_array(strtoupper($this->operator), array('IS NULL', 'IS NOT NULL'))) {
             $where = "\"$this->field\" $this->operator";
         }
         else {
@@ -97,6 +97,11 @@ EOT;
         }
         
         // determination history
+        $handle = fopen('archive/identification_history.csv', 'w');
+        $firstrow = ["CoreID","identificationID","identificationQualifier","identifiedBy","dateIdentified",
+            "identificationRemarks","scientificName","scientificNameAuthorship","nomenclaturalStatus"];
+        fputcsv($handle, $firstrow);
+
         $select = <<<EOT
 SELECT count(*)         
 FROM core c
@@ -106,17 +111,11 @@ EOT;
         $stmt = $this->db->prepare($select);
         $stmt->execute();
         if ($stmt->fetchColumn() > 0) {
-            $handle = fopen('archive/determinationhistory.csv', 'w');
-            $firstrow = ["CoreID","identificationID","identificationQualifier","identifiedBy","dateIdentified",
-                "identificationRemarks","scientificName","scientificNameAuthorship","nomenclaturalStatus"];
-            fputcsv($handle, $firstrow);
             
             $select = <<<EOT
-SELECT c."CoreID", e."scientificName", e."kingdom", e."phylum", e."class", e."order", e."family", e."genus", 
-    e."specificEpithet", e."taxonRank", e."infraspecificEpithet", e."CultivarName", e."scientificNameAuthorship", 
-    e."nomenclaturalStatus", e."identificationQualifier", e."IdentificationQualifierInsertionPoint", 
-    e."DwCIdentificationQualifier", e."ScientificNameAddendum", e."DeterminerRole", e."identifiedBy", 
-    e."dateIdentified", e."VerbatimIdentificationDate", e."identificationRemarks",e."identificationID"
+SELECT c."CoreID", e."identificationID", e."DwCIdentificationQualifier", e."identifiedBy", 
+    e."dateIdentified", e."identificationRemarks", e."scientificName", e."scientificNameAuthorship", 
+    e."nomenclaturalStatus"
 FROM core c
 JOIN determinationhistory e ON c."CoreID"=e."CoreID"
 WHERE c.$where;
@@ -138,14 +137,14 @@ EOT;
         $zip = new ZipArchive;
         if ($zip->open("$this->filename.zip", ZipArchive::CREATE) === TRUE) {
             $zip->addFile('unit.csv');
-            if ($this->extension) $zip->addFile('determinationhistory.csv');
+            $zip->addFile('identification_history.csv');
             $zip->addFile('meta.xml');
             $zip->addFile('eml.xml');
             $zip->close();
 
             // delete csv files
             unlink('unit.csv');
-            if ($this->extension) unlink('determinationhistory.csv');
+            unlink('identification_history.csv');
         }
          else {
             echo 'Failed...';

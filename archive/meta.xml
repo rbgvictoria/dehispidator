@@ -153,7 +153,7 @@
         ignoreHeaderLines="1" 
         rowType="http://rs.tdwg.org/dwc/terms/Identification">
         <files>
-            <location>identificationhistory.csv</location>
+            <location>identification_history.csv</location>
         </files>
         <coreid index="0"/>
         <field index="1" term="http://rs.tdwg.org/dwc/terms/identificationID"/> <!-- identificationID --><!-- Added 2014-01-05 -->

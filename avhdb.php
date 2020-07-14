@@ -210,7 +210,7 @@ class AvhDb {
                 $coreid = $n;
             }
             $this->coorIDs[] = $coreid;
-            $this->catalogNumbers[] = $institutionCode . ' ' . $catalogNumber;
+            $this->catalogNumbers[] = $catalogNumber;
             
             array_unshift($row, $coreid);
             
@@ -220,7 +220,7 @@ class AvhDb {
             $stmtInsert->execute($row);
             if ($stmtInsert->errorCode() != '00000') {
                 $error = $stmtInsert->errorInfo();
-                array_unshift($error, $institutionCode . ' ' . $catalogNumber);
+                array_unshift($error, $catalogNumber);
                 array_unshift($error, 'core');
                 
                 $this->stmtError->execute($error);
@@ -316,13 +316,20 @@ class AvhDb {
         foreach ($this->extensiondata as $row) {
             $catalognumber = $row[0] . ' ' . $row[1];
             $key = array_search($catalognumber, $this->catalogNumbers);
-            if ($key !== FALSE)
+            if ($key !== FALSE) {
                 $coreid = $this->coorIDs[$key];
-            else $coreid = FALSE;
-            
+            }
+            else {
+                $coreid = FALSE;
+            }
             array_shift($row);
             array_shift($row);
             array_unshift($row, $coreid);
+            foreach ($row as $index => $val) {
+                if (!$val) {
+                    $row[$index] = null;
+                }
+            }
             $stmtInsert->execute($row);
             if ($stmtInsert->errorCode() != '00000') {
                 $error = $stmtInsert->errorInfo();

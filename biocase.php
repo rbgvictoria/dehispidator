@@ -192,7 +192,7 @@ QUERY;
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
         curl_setopt($ch, CURLOPT_PROXY, "http://10.15.14.4:8080"); 
         curl_setopt($ch, CURLOPT_PROXYPORT, 8080); 
-        curl_setopt($ch, CURLOPT_PROXYUSERPWD, "nklazenga:46Dicranol!");
+        curl_setopt($ch, CURLOPT_PROXYUSERPWD, "nklazenga:48Dicranol!");
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
